@@ -1,10 +1,465 @@
-<html>
-  <head>
-    <title>
-      website
-    </title>
-  </head>
-  <body>
-    Hi, my name is Ashfa
-  </body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashfa | Social Media Marketer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fd;
+    color: #18243b;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #263c72;
+}
+
+nav a {
+    text-decoration: none;
+    color: #39445b;
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #7867d9;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 10%;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 9px 17px;
+    background: #eceaff;
+    color: #6555bd;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #7464d5;
+}
+
+.hero p {
+    color: #687187;
+    line-height: 1.9;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #293f77;
+    color: white;
+    padding: 14px 27px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #7464d5;
+    transform: translateY(-3px);
+}
+
+.hero-card {
+    width: 310px;
+    height: 340px;
+    background: linear-gradient(145deg, #293f77, #8274dc);
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 20px 45px rgba(41,63,119,0.2);
+    flex-shrink: 0;
+}
+
+.hero-card .symbol {
+    font-size: 75px;
+    margin-bottom: 15px;
+}
+
+.hero-card h2 {
+    font-size: 24px;
+}
+
+.hero-card p {
+    color: #e2e2ff;
+    margin: 8px 0 0;
+}
+
+section {
+    padding: 85px 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #7a8293;
+    font-size: 14px;
+}
+
+.about {
+    background: white;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: auto;
+    color: #687187;
+    line-height: 2;
+    font-size: 15px;
+}
+
+.skills-grid, .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.skill, .service, .project {
+    background: white;
+    padding: 28px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.04);
+    transition: 0.3s;
+}
+
+.skill:hover, .service:hover, .project:hover {
+    transform: translateY(-6px);
+}
+
+.skill h3, .service h3, .project h3 {
+    margin: 13px 0 9px;
+    font-size: 17px;
+}
+
+.skill p, .service p, .project p {
+    color: #788195;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.projects {
+    background: white;
+}
+
+.project {
+    background: #f8f8fd;
+}
+
+.project-label {
+    display: inline-block;
+    color: #6555bd;
+    font-size: 11px;
+    background: #eceaff;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.contact {
+    text-align: center;
+    background: #263c72;
+    color: white;
+}
+
+.contact p {
+    color: #d8ddf0;
+    margin: 15px auto 28px;
+    max-width: 500px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.contact .btn {
+    background: white;
+    color: #263c72;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background: #18294e;
+    color: #cbd2e5;
+    font-size: 12px;
+}
+
+@media(max-width: 800px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 310px;
+    }
+
+    .skills-grid, .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ASHFA.</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+    <div class="hero-text">
+        <span class="tag">Student | Aspiring Social Media Marketer</span>
+        <h1>Hello, I'm <span>Ashfa.</span></h1>
+        <p>
+            A passionate student and beginner social media marketer
+            exploring the digital world. I love creativity, content
+            creation and helping brands build their online presence.
+        </p>
+        <a href="#about" class="btn">Discover More →</a>
+    </div>
+
+    <div class="hero-card">
+        <div class="symbol">✦</div>
+        <h2>Creative Minds.</h2>
+        <p>Digital Ideas & Growth.</p>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="section-title">
+        <h2>About Me</h2>
+        <p>A little introduction about myself</p>
+    </div>
+
+    <div class="about-content">
+        <p>
+            I'm Ashfa, a student with a growing interest in social media
+            marketing and the digital business world. I'm at the beginning
+            of my professional journey, learning how to create engaging
+            content, understand audiences and develop effective marketing
+            strategies. I'm eager to gain experience, improve my skills
+            and turn creative ideas into meaningful digital experiences.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="section-title">
+        <h2>My Skills</h2>
+        <p>Skills I'm learning and developing</p>
+    </div>
+
+    <div class="skills-grid">
+        <div class="skill">
+            <div class="icon">📱</div>
+            <h3>Social Media Management</h3>
+            <p>Understanding social platforms and managing online presence.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">🎨</div>
+            <h3>Content Creation</h3>
+            <p>Creating attractive posts and creative digital content.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">📊</div>
+            <h3>Analytics</h3>
+            <p>Learning to understand engagement, reach and performance.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">✍️</div>
+            <h3>Content Writing</h3>
+            <p>Developing captions, creative ideas and engaging messages.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">💡</div>
+            <h3>Creativity</h3>
+            <p>Thinking of new ideas and creative approaches to marketing.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">🤝</div>
+            <h3>Communication</h3>
+            <p>Building communication and teamwork skills.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background:#f0f1fa;">
+    <div class="section-title">
+        <h2>What I Can Offer</h2>
+        <p>My areas of interest in digital marketing</p>
+    </div>
+
+    <div class="services-grid">
+        <div class="service">
+            <div class="icon">📸</div>
+            <h3>Social Media Content</h3>
+            <p>Creative social media posts and content ideas for brands.</p>
+        </div>
+
+        <div class="service">
+            <div class="icon">📅</div>
+            <h3>Content Planning</h3>
+            <p>Organising content ideas and creating posting schedules.</p>
+        </div>
+
+        <div class="service">
+            <div class="icon">📈</div>
+            <h3>Social Media Growth</h3>
+            <p>Exploring strategies to improve engagement and online visibility.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="projects" id="portfolio">
+    <div class="section-title">
+        <h2>My Portfolio</h2>
+        <p>Creative work and projects</p>
+    </div>
+
+    <div class="services-grid">
+        <div class="project">
+            <span class="project-label">Practice Project</span>
+            <h3>Social Media Designs</h3>
+            <p>Creative post designs and visual content concepts for social media.</p>
+        </div>
+
+        <div class="project">
+            <span class="project-label">Practice Project</span>
+            <h3>Content Ideas</h3>
+            <p>Developing engaging content ideas and sample captions for brands.</p>
+        </div>
+
+        <div class="project">
+            <span class="project-label">Learning</span>
+            <h3>Digital Marketing</h3>
+            <p>Exploring marketing tools, analytics and social media strategies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="section-title">
+        <h2>Let's Connect!</h2>
+    </div>
+
+    <p>
+        I'm always excited to learn, connect with new people
+        and explore opportunities in the digital marketing world.
+    </p>
+
+    <a href="mailto:your-email@example.com" class="btn">
+        Get In Touch →
+    </a>
+</section>
+
+<footer>
+    © 2026 Ashfa. All Rights Reserved.
+    <br><br>
+    Designed with creativity.
+</footer>
+
+</body>
 </html>
